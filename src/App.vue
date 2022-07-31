@@ -18,6 +18,15 @@ export default {
     function alertFunction() {
       console.log(input.value);
     }
+
+        onMounted(async () => {
+                       const response = await apiClient.get("Function1", { name: "Faisal" });
+            Promise.resolve(response.data).then((value) => {
+              console.log(value);
+              // expected output: 123
+            });
+        });
+
     return{input, alertFunction}  
   }
 }
